@@ -1,0 +1,7 @@
+.navbar-brand:hover {
+    cursor: default;
+}
+
+.navbar {
+    text-align: center;
+}
