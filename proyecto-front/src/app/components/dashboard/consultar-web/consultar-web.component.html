@@ -1,0 +1,41 @@
+<div class="bg_animate">
+    <div class="main-div">
+        <mat-card>
+            <mat-card-header>
+                <mat-card-title>{{titulo}}</mat-card-title>
+            </mat-card-header>
+            <mat-card-content>
+                <form class="example-container" [formGroup]="createConsulta">
+                    <mat-form-field class="example-full-width" appearance="fill">
+                        <mat-label>Ingresar URL</mat-label>
+                        <input matInput placeholder="https://www.google.com" value="" formControlName="url">
+                    </mat-form-field>
+                    <button type="submit" mat-icon-button color="primary" aria-label="Example icon button with a home icon" (click)="agregar()">
+                        <mat-icon>search</mat-icon>
+                    </button>
+                </form>
+            </mat-card-content>
+            <mat-card-actions>
+                <button mat-raised-button color="primary" routerLink="/inicio">Volver</button>
+            </mat-card-actions>
+            <mat-card-footer>
+                <mat-label>Recordar ingresar "http" o "https" segun corresponda, ejemplo: https://www.google.com</mat-label>
+            </mat-card-footer>
+        </mat-card>
+    </div>
+
+    <div class="burbujas">
+        <div class="burbuja"></div>
+        <div class="burbuja"></div>
+        <div class="burbuja"></div>
+        <div class="burbuja"></div>
+        <div class="burbuja"></div>
+        <div class="burbuja"></div>
+        <div class="burbuja"></div>
+        <div class="burbuja"></div>
+        <div class="burbuja"></div>
+        <div class="burbuja"></div>
+    </div>
+
+</div>
+

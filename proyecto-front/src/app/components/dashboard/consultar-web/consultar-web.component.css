@@ -1,0 +1,20 @@
+.main-div{
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.mat-card {
+    text-align: center;
+    width: 100vh;
+}
+
+.mat-card-header {
+    justify-content: center;
+}
+
+.mat-form-field {
+    font-size: 14px;
+    width: 94%;
+}

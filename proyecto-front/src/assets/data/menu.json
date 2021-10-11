@@ -1,0 +1,14 @@
+[
+    {
+        "nombre": "Inicio",
+        "redirect": "/inicio"
+    },
+    {
+        "nombre": "Contactanos",
+        "redirect": "#"
+    },
+    {
+        "nombre": "Acerca de",
+        "redirect": "#"
+    }
+]

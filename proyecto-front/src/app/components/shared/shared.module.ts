@@ -18,7 +18,10 @@ import { MatSortModule } from '@angular/material/sort';
 import { MatCardModule } from '@angular/material/card';
 import { MatGridListModule } from '@angular/material/grid-list';
 import { MatSelectModule } from '@angular/material/select';
+import { ScrollingModule } from '@angular/cdk/scrolling';
 import { ReactiveFormsModule } from '@angular/forms';
+import { InfiniteScrollModule } from 'ngx-infinite-scroll';
+import { NgxSpinnerModule } from 'ngx-spinner';
 
 @NgModule({
   declarations: [],
@@ -40,7 +43,10 @@ import { ReactiveFormsModule } from '@angular/forms';
     MatCardModule,
     MatGridListModule,
     MatSelectModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    ScrollingModule,
+    InfiniteScrollModule,
+    NgxSpinnerModule
   ],
   exports: [
     MatSliderModule,
@@ -59,7 +65,10 @@ import { ReactiveFormsModule } from '@angular/forms';
     MatCardModule,
     MatGridListModule,
     MatSelectModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    ScrollingModule,
+    InfiniteScrollModule,
+    NgxSpinnerModule
   ] //Para que todos los modulos sean visibles
 })
 export class SharedModule { }

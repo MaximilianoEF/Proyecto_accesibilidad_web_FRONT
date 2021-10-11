@@ -1,0 +1,234 @@
+<div class="main-div" *ngIf="!loading">
+  <mat-progress-spinner color="accent" mode="indeterminate"></mat-progress-spinner>
+</div>
+<div class="main-div">
+  <mat-card>
+    <mat-card-header>
+      <mat-card-title>Resultados</mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+      <table *ngIf="loading">
+        <thead>
+          <tr>
+            <th scope="col">Principio</th>
+            <th scope="col">Pauta</th>
+            <th scope="col">Criterio</th>
+            <th scope="col">Nivel</th>
+            <th scope="col">Resultado</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th colspan="1" rowspan="14" scope="rowgroup">1 Perceptible</th>
+            <th scope="row">1.1 Alternativas textuales</th>
+            <td scope="row">1.1.1 Contenido no textual</td>
+            <td>A</td>
+            <td></td>
+          </tr>
+          <tr>
+            <th colspan="1" rowspan="5" scope="rowgroup">1.2 Contenido multimedia dependiente del tiempo</th>
+            <td scope="row">1.2.1 Sólo audio y sólo vídeo (pregrabado)</td>
+            <td>A</td>
+            <td></td>
+          </tr>
+          <tr>
+            <td scope="row">1.2.2 Subtítulos (pregrabados)</td>
+            <td>A</td>
+            <td></td>
+          </tr>
+          <tr>
+            <td scope="row">1.2.3 Audiodescripción o alternativa multimedia (pregrabada)</td>
+            <td>A</td>
+            <td></td>
+          </tr>
+          <tr>
+            <td scope="row">1.2.4 Subtítulos (directo)</td>
+            <td>AA</td>
+            <td></td>
+          </tr>
+          <tr>
+            <td scope="row">1.2.5 Audiodescripción (pregrabada)</td>
+            <td>AA</td>
+            <td></td>
+          </tr>
+          <tr>
+            <th colspan="1" rowspan="3" scope="rowgroup">1.3 Adaptabilidad</th>
+            <td scope="row">1.3.1 Información y relaciones</td>
+            <td>A</td>
+            <td></td>
+          </tr>
+          <tr>
+            <td scope="row">1.3.2 Secuencia significativa</td>
+            <td>A</td>
+            <td></td>
+          </tr>
+          <tr>
+            <td scope="row">1.3.3 Características sensoriales</td>
+            <td>A</td>
+            <td></td>
+          </tr>
+          <tr>
+            <th colspan="1" rowspan="5" scope="rowgroup">1.4 Distinguible</th>
+            <td scope="row">1.4.1 Empleo del color</td>
+            <td>A</td>
+            <td></td>
+          </tr>
+          <tr>
+            <td scope="row">1.4.2 Control del audio</td>
+            <td>A</td>
+            <td></td>
+          </tr>
+          <tr>
+            <td scope="row">1.4.3 Contraste (mínimo)</td>
+            <td>AA</td>
+            <td></td>
+          </tr>
+          <tr>
+            <td scope="row">1.4.4 Cambio de tamaño del texto</td>
+            <td>AA</td>
+            <td></td>
+          </tr>
+          <tr>
+            <td scope="row">1.4.5 Imágenes de texto</td>
+            <td>AA</td>
+            <td></td>
+          </tr>
+          <tr>
+            <th colspan="1" rowspan="12" scope="rowgroup">2 Operabilidad</th>
+            <th colspan="1" rowspan="2" scope="rowgroup">2.1 Accesible a través del teclado</th>
+            <td scope="row">2.1.1 Teclado</td>
+            <td>A</td>
+            <td></td>
+          </tr>
+          <tr>
+            <td scope="row">2.1.2 Sin trampa de teclado</td>
+            <td>A</td>
+            <td></td>
+          </tr>
+          <tr>
+            <th colspan="1" rowspan="2" scope="rowgroup">2.2 Tiempo suficiente</th>
+            <td scope="row">2.2.1 Límite de tiempo ajustable</td>
+            <td>A</td>
+            <td></td>
+          </tr>
+          <tr>
+            <td scope="row">2.2.2 Pausar, detener, ocultar</td>
+            <td>A</td>
+            <td></td>
+          </tr>
+          <tr>
+            <th colspan="1" rowspan="1" scope="rowgroup">2.3 Ataques</th>
+            <td scope="row">2.3.1 Tres destellos o por debajo del umbral</td>
+            <td>A</td>
+            <td></td>
+          </tr>
+          <tr>
+            <th colspan="1" rowspan="7" scope="rowgroup">2.4 Navegable</th>
+            <td scope="row">2.4.1 Saltar bloques</td>
+            <td>A</td>
+            <td></td>
+          </tr>
+          <tr>
+            <td scope="row">2.4.2 Página titulada</td>
+            <td>A</td>
+            <td></td>
+          </tr>
+          <tr>
+            <td scope="row">2.4.3 Orden de foco</td>
+            <td>A</td>
+            <td></td>
+          </tr>
+          <tr>
+            <td scope="row">2.4.4 Propósito de un vínculo (en su contexto)</td>
+            <td>A</td>
+            <td></td>
+          </tr>
+          <tr>
+            <td scope="row">2.4.5 Múltiples medios</td>
+            <td>AA</td>
+            <td></td>
+          </tr>
+          <tr>
+            <td scope="row">2.4.6 Encabezados y etiquetas</td>
+            <td>AA</td>
+            <td></td>
+          </tr>
+          <tr>
+            <td scope="row">2.4.7 Foco visible</td>
+            <td>AA</td>
+            <td></td>
+          </tr>
+          <tr>
+            <th colspan="1" rowspan="10" scope="rowgroup">3 Comprensibilidad</th>
+            <th colspan="1" rowspan="2" scope="rowgroup">3.1 Legible</th>
+            <td scope="row">3.1.1 Idioma de la página</td>
+            <td>A</td>
+            <td></td>
+          </tr>
+          <tr>
+            <td scope="row">3.1.2 Idioma de partes</td>
+            <td>AA</td>
+            <td></td>
+          </tr>
+          <tr>
+            <th colspan="1" rowspan="4" scope="rowgroup">3.2 Predecible</th>
+            <td scope="row">3.2.1 Con foco</td>
+            <td>A</td>
+            <td></td>
+          </tr>
+          <tr>
+            <td scope="row">3.2.2 Con entrada de datos</td>
+            <td>A</td>
+            <td></td>
+          </tr>
+          <tr>
+            <td scope="row">3.2.3 Navegación consistente</td>
+            <td>AA</td>
+            <td></td>
+          </tr>
+          <tr>
+            <td scope="row">3.2.4 Identificación consistente</td>
+            <td>AA</td>
+            <td></td>
+          </tr>
+          <tr>
+            <th colspan="1" rowspan="4" scope="rowgroup">3.3 Ayuda a la entrada de datos</th>
+            <td scope="row">3.3.1 Identificación de errores</td>
+            <td>A</td>
+            <td></td>
+          </tr>
+          <tr>
+            <td scope="row">3.3.2 Instrucciones o etiquetas</td>
+            <td>A</td>
+            <td></td>
+          </tr>
+          <tr>
+            <td scope="row">3.3.3 Sugerencia tras error</td>
+            <td>AA</td>
+            <td></td>
+          </tr>
+          <tr>
+            <td scope="row">3.3.4 Prevención de errores (legales, financieros, de datos)</td>
+            <td>AA</td>
+            <td></td>
+          </tr>
+          <tr>
+            <th colspan="1" rowspan="2" scope="rowgroup">4 Robustez</th>
+            <th colspan="1" rowspan="2" scope="rowgroup">4.1 Compatible</th>
+            <td scope="row">4.1.1 Interpretación</td>
+            <td>A</td>
+            <td></td>
+          </tr>
+          <tr>
+            <td scope="row">4.1.2 Nombre, rol, valor</td>
+            <td>A</td>
+            <td></td>
+          </tr>
+        </tbody>
+      </table>
+    </mat-card-content>
+    <mat-card-footer>
+      <button mat-raised-button>Volver</button>
+    </mat-card-footer>
+  </mat-card>
+</div>

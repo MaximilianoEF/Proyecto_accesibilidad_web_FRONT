@@ -12,7 +12,6 @@ import { ToastrService } from 'ngx-toastr';
 export class ConsultarWebComponent implements OnInit {
 
   createConsulta: FormGroup;
-  loading = false;
   titulo = 'Ingresar URL para analizar';
 
   constructor(private fb: FormBuilder, private resultadoService: ResultadoServiceService, private router: Router, private toastr: ToastrService) {
@@ -29,12 +28,11 @@ export class ConsultarWebComponent implements OnInit {
     const consulta: any = {
       url: this.createConsulta.value.url
     }
-    this.loading = true;
     this.resultadoService.postUrl(consulta.url).subscribe(() => {
       this.toastr.success('La consulta fue registrada con exito!', 'Consulta exitosa', {
         positionClass: 'toast-bottom-right'
     });
-      this.router.navigate(['/consultar-web/list-resultado']);
+      this.router.navigate(['/dashboard/list-resultado']);
     });
   }
 

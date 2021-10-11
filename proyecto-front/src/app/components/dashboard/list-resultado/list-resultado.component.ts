@@ -1,10 +1,22 @@
 import { Component, OnInit } from '@angular/core';
 import { MatTableDataSource } from '@angular/material/table';
+import { NgxSpinnerService } from 'ngx-spinner';
 import { Criterio } from 'src/app/models/Criterio';
 import { Pauta } from 'src/app/models/Pauta';
 import { Post } from 'src/app/models/Post';
 import { Tecnica } from 'src/app/models/Tecnica';
 import { ResultadoServiceService } from 'src/app/services/resultado-service.service';
+
+export interface InfoElement {
+  principio: string;
+  pauta: string;
+  criterio: string | string[];
+  nivel: string | string[];
+}
+
+export interface Principio {
+  principio: string;
+}
 
 @Component({
   selector: 'app-list-resultado',
@@ -18,27 +30,21 @@ export class ListResultadoComponent implements OnInit {
   criterios: Criterio[] = [];
   tecnicas: Tecnica[] = [];
   resultados: string[] = [];
-  displayedColumns: string[] = ['principio', 'pauta', 'criterio', 'tecnica', 'resultado'];
-
-  dataSource = new MatTableDataSource(this.principios);
+ 
   loading = true;
   titulo = 'Resultados del Analisis';
 
-  constructor(private resultadoService: ResultadoServiceService) {
-    
-  }
-
-  ngOnInit(): void {
+  constructor(private _resultadoService: ResultadoServiceService, private spinner: NgxSpinnerService) {
     this.getResultados();
   }
 
-  applyFilter(event: Event) {
-    const filterValue = (event.target as HTMLInputElement).value;
-    this.dataSource.filter = filterValue.trim().toLowerCase();
+  ngOnInit(): void {
+   //this.getResultados();
   }
 
   getResultados() {
-    this.resultadoService.getData().subscribe(data => {
+    this._resultadoService.getData().subscribe(data => {
+      console.log('DATA: ', data);
       this.principios = data;
       this.pautas = data[0].pautas;
       this.pautas.forEach(pauta => {
@@ -54,11 +60,19 @@ export class ListResultadoComponent implements OnInit {
               "descripcion": tecnica.descripcion,
               "resultado": tecnica.resultado
             });
+            this.resultados.push(tecnica.resultado);
           });
         })
       })
       this.loading = false;
     });
+    console.log(this.principios);
+    console.log(this.pautas);
+    console.log(this.criterios);
+    console.log(this.tecnicas);
+    console.log(this.resultados);
   }
+
+
 
 }

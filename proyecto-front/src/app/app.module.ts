@@ -10,16 +10,13 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AppRoutingModule } from './app-routing.module';
 
 import { AppComponent } from './app.component';
-import { NavbarComponent } from './components/navbar/navbar.component';
 import { InicioComponent } from './components/inicio/inicio.component';
 import { SharedModule } from './components/shared/shared.module';
-import { ConsultarWebModule } from './components/consultar-web/consultar-web.module';
 
 @NgModule({
   declarations: [
     AppComponent,
-    NavbarComponent,
-    InicioComponent
+    InicioComponent,
   ],
   imports: [
     BrowserModule,
@@ -30,8 +27,7 @@ import { ConsultarWebModule } from './components/consultar-web/consultar-web.mod
     CommonModule,
     BrowserAnimationsModule,
     ToastrModule.forRoot(),
-    SharedModule,
-    ConsultarWebModule
+    SharedModule
   ],
   providers: [],
   bootstrap: [AppComponent]

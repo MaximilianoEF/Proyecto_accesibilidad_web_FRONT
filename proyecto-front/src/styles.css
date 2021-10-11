@@ -227,3 +227,13 @@ body{
         transform: translateY(0);
     }
 }
+
+.container {
+    margin-left: 100px;
+    margin-right: 100px;
+    margin-top: 5px;
+}
+
+.example-spacer {
+    flex: 1 1 auto;
+}

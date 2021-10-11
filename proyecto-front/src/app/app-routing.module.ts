@@ -7,7 +7,7 @@ const routes: Routes = [{
 }, {
   path: 'inicio', component: InicioComponent
 }, {
-  path: 'consultar-web', loadChildren: () => import('./components/consultar-web/consultar-web-routing.module').then(x => x.ConsultarWebRoutingModule)
+  path: 'dashboard', loadChildren: () => import('./components/dashboard/dashboard.module').then(x => x.DashboardModule)
   //Carga perezosa, consiste en retrasar la carga o inicialización de un objeto hasta el mismo momento de su utilización
 }, {
   path: '**', redirectTo: 'inicio', pathMatch: 'full'
