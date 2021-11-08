@@ -1,0 +1,29 @@
+<div>
+  <h1>
+    Lazy Loading
+  </h1>
+  <ul>
+    <li>
+      <a routerLink="/home">Home</a>
+      <ul>
+        <li><a routerLink="/home/uno">Componente 1</a></li>
+        <li><a routerLink="/home/dos">Componente 2</a></li>
+      </ul>
+    </li>    
+    <li>
+      <a routerLink="/about">About</a>
+      <ul>
+        <li><a routerLink="/about/uno">Componente 1</a></li>
+        <li><a routerLink="/about/dos">Componente 2</a></li>
+      </ul>
+    </li>
+    <li>
+      <a routerLink="/contact">Contact</a>
+      <ul>
+        <li><a routerLink="/contact/uno">Componente 1</a></li>
+        <li><a routerLink="/contact/dos">Componente 2</a></li>
+      </ul>
+    </li>
+  </ul>
+</div>
+<router-outlet></router-outlet>

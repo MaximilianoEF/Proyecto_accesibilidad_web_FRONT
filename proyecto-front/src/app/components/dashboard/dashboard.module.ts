@@ -6,6 +6,7 @@ import { ListResultadoComponent } from './list-resultado/list-resultado.componen
 import { DashboardRoutingModule } from './dashboard-routing.module';
 import { DashboardComponent } from './dashboard.component';
 import { NavbarComponent } from './navbar/navbar.component';
+import { DialogDataExampleComponent } from './list-resultado/dialog-data-example/dialog-data-example/dialog-data-example.component';
 
 
 
@@ -14,7 +15,8 @@ import { NavbarComponent } from './navbar/navbar.component';
     DashboardComponent,
     NavbarComponent,
     ConsultarWebComponent,
-    ListResultadoComponent
+    ListResultadoComponent,
+    DialogDataExampleComponent
   ],
   imports: [
     CommonModule,

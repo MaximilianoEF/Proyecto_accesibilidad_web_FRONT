@@ -30,22 +30,27 @@ export class ListResultadoComponent implements OnInit {
   criterios: Criterio[] = [];
   tecnicas: Tecnica[] = [];
   resultados: string[] = [];
+  resultado: boolean[] = [];
  
   loading = true;
   titulo = 'Resultados del Analisis';
+  dateDay = new Date().toString().substring(4,24);
+  url = '';
 
   constructor(private _resultadoService: ResultadoServiceService, private spinner: NgxSpinnerService) {
     this.getResultados();
   }
 
   ngOnInit(): void {
-   //this.getResultados();
+   this.getResultados();
+   console.log(this.dateDay);
   }
 
   getResultados() {
     this._resultadoService.getData().subscribe(data => {
       console.log('DATA: ', data);
       this.principios = data;
+      this.url = data[4].detalle.substring(8, );
       this.pautas = data[0].pautas;
       this.pautas.forEach(pauta => {
         pauta.criterios.forEach(criterio => {
@@ -64,13 +69,20 @@ export class ListResultadoComponent implements OnInit {
           });
         })
       })
+      this.criterios.forEach(criterio => {
+        criterio.tecnicas.forEach(tecnica => {
+          try {
+            if(tecnica.resultado === 'FAIL') throw this.resultado.push(false);
+          }
+          catch(e) {
+
+          }
+        })
+      })
       this.loading = false;
+      console.log(this.resultado);
     });
-    console.log(this.principios);
-    console.log(this.pautas);
-    console.log(this.criterios);
-    console.log(this.tecnicas);
-    console.log(this.resultados);
+    
   }
 
 

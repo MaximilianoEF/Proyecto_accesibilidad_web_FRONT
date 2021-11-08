@@ -1,13 +1,13 @@
-<div class="main-div" *ngIf="!loading">
+<div class="main-div" *ngIf="loading">
   <mat-progress-spinner color="accent" mode="indeterminate"></mat-progress-spinner>
 </div>
-<div class="main-div">
+<div class="main-div" *ngIf="!loading">
   <mat-card>
     <mat-card-header>
-      <mat-card-title>Resultados</mat-card-title>
+      <mat-card-title>Resultado de "{{url}}" en el dia {{dateDay}}</mat-card-title>
     </mat-card-header>
     <mat-card-content>
-      <table *ngIf="loading">
+      <table>
         <thead>
           <tr>
             <th scope="col">Principio</th>
@@ -227,8 +227,8 @@
         </tbody>
       </table>
     </mat-card-content>
-    <mat-card-footer>
-      <button mat-raised-button>Volver</button>
-    </mat-card-footer>
+    <mat-card-actions>
+      <button mat-raised-button color="primary" routerLink="/dashboard/consultar-web">Volver</button>
+  </mat-card-actions>
   </mat-card>
 </div>
