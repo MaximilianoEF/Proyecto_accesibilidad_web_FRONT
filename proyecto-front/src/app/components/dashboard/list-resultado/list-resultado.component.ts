@@ -1,11 +1,13 @@
 import { Component, OnInit } from '@angular/core';
-import { MatTableDataSource } from '@angular/material/table';
 import { NgxSpinnerService } from 'ngx-spinner';
 import { Criterio } from 'src/app/models/Criterio';
 import { Pauta } from 'src/app/models/Pauta';
 import { Post } from 'src/app/models/Post';
 import { Tecnica } from 'src/app/models/Tecnica';
 import { ResultadoServiceService } from 'src/app/services/resultado-service.service';
+
+import jsPDF from 'jspdf';
+import autoTable from 'jspdf-autotable';
 
 export interface InfoElement {
   principio: string;
@@ -26,9 +28,6 @@ export interface Principio {
 export class ListResultadoComponent implements OnInit {
 
   principios: Post[] = [];
-  pautas: Pauta[] = [];
-  criterios: Criterio[] = [];
-  tecnicas: Tecnica[] = [];
   resultados: string[] = [];
   resultado: boolean[] = [];
  
@@ -36,9 +35,9 @@ export class ListResultadoComponent implements OnInit {
   titulo = 'Resultados del Analisis';
   dateDay = new Date().toString().substring(4,24);
   url = '';
+  conclusion = '';
 
   constructor(private _resultadoService: ResultadoServiceService, private spinner: NgxSpinnerService) {
-    this.getResultados();
   }
 
   ngOnInit(): void {
@@ -51,40 +50,61 @@ export class ListResultadoComponent implements OnInit {
       console.log('DATA: ', data);
       this.principios = data;
       this.url = data[4].detalle.substring(8, );
-      this.pautas = data[0].pautas;
-      this.pautas.forEach(pauta => {
-        pauta.criterios.forEach(criterio => {
-          this.criterios.push({
-            "codigo": criterio.codigo,
-            "descripcion": criterio.descripcion,
-            "tecnicas": criterio.tecnicas
-          });
-          criterio.tecnicas.forEach(tecnica => {
-            this.tecnicas.push({
-              "codigo": tecnica.codigo,
-              "descripcion": tecnica.descripcion,
-              "resultado": tecnica.resultado
-            });
-            this.resultados.push(tecnica.resultado);
-          });
-        })
+      
+      data.forEach((principio: Post) => {
+        if(principio.codigo !== '5') {
+          principio.pautas.forEach((pauta: Pauta) => {
+            pauta.criterios.forEach((criterio: Criterio) => {
+                var aux = 0;
+                console.log('CRITERIO: ', criterio.codigo);
+                criterio.tecnicas.forEach((tecnica: Tecnica) => {
+                  if(tecnica.resultado === 'OK' || tecnica.resultado === 'MANUAL') {
+                    aux++;
+                  }
+                });
+                if(criterio.tecnicas.length === 0) {
+                  this.resultados.push('Cumple');
+                  this.resultado.push(true);
+                } else if(aux === criterio.tecnicas.length) {
+                  this.resultado.push(true);
+                  this.resultados.push('Cumple');
+                } else {
+                  this.resultado.push(false);
+                  this.resultados.push('No cumple');
+                }
+            })
+          })
+        }
       })
-      this.criterios.forEach(criterio => {
-        criterio.tecnicas.forEach(tecnica => {
-          try {
-            if(tecnica.resultado === 'FAIL') throw this.resultado.push(false);
-          }
-          catch(e) {
 
-          }
-        })
-      })
+      var aux = 0;
+      this.resultado.forEach(res => {
+        if(res === true) {
+          aux++;
+        }
+      });
+
+      console.log('VALOR DE AUX: ', aux);
+
+      if(aux >= 30) {
+        this.conclusion = 'ACCESIBLE';
+      } else {
+        this.conclusion = 'NO ACCESIBLE';
+      }
+
       this.loading = false;
-      console.log(this.resultado);
+      console.log('Resultado: ', this.resultado);
+      console.log('Resultados: ', this.resultados);
+
     });
     
   }
 
-
+  public downloadPDF(): void {
+    const doc = new jsPDF()
+    doc.text("Analisis AW: \n"+"URL: "+this.url+"\n"+"Fecha: "+this.dateDay+"\n"+"Resultado: pagina web "+this.conclusion, 7, 10);
+    autoTable(doc, { html: '#htmlData', startY: 40})
+    doc.save(this.url+'-'+'AnexoII.pdf')
+  }
 
 }

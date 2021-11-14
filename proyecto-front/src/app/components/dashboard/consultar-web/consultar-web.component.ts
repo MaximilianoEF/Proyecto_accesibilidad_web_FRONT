@@ -29,7 +29,7 @@ export class ConsultarWebComponent implements OnInit {
       url: this.createConsulta.value.url
     }
     this.resultadoService.postUrl(consulta.url).subscribe(() => {
-      this.toastr.success('La consulta fue registrada con exito!', 'Consulta exitosa', {
+      this.toastr.success('La consulta fue registrada, aguarde unos instantes...', 'Consulta exitosa!', {
         positionClass: 'toast-bottom-right'
     });
       this.router.navigate(['/dashboard/list-resultado']);

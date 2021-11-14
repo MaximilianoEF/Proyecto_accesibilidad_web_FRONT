@@ -5,10 +5,10 @@
     },
     {
         "nombre": "Contactanos",
-        "redirect": "#"
+        "redirect": "/contactanos"
     },
     {
         "nombre": "Acerca de",
-        "redirect": "#"
+        "redirect": "/acerca-de"
     }
 ]

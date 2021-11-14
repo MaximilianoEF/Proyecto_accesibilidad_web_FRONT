@@ -12,11 +12,15 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { InicioComponent } from './components/inicio/inicio.component';
 import { SharedModule } from './components/shared/shared.module';
+import { AcercaDeComponent } from './components/acerca-de/acerca-de.component';
+import { ContactanosComponent } from './components/contactanos/contactanos.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     InicioComponent,
+    AcercaDeComponent,
+    ContactanosComponent,
   ],
   imports: [
     BrowserModule,

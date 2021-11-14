@@ -1,0 +1,9 @@
+.container {
+    justify-content: center;
+    align-items: center;
+    margin-top: 5%;
+}
+.boton {
+    justify-content: first baseline;
+    align-items: initial;
+}

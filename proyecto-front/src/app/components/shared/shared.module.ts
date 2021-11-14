@@ -2,6 +2,9 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { HttpClientModule } from '@angular/common/http';
 
+//Modulos PDF
+
+
 //Modulos de Angular Material
 import { MatSliderModule } from '@angular/material/slider';
 import { MatFormFieldModule } from '@angular/material/form-field';
@@ -22,6 +25,7 @@ import { ScrollingModule } from '@angular/cdk/scrolling';
 import { ReactiveFormsModule } from '@angular/forms';
 import { InfiniteScrollModule } from 'ngx-infinite-scroll';
 import { NgxSpinnerModule } from 'ngx-spinner';
+import { MatDialogModule } from '@angular/material/dialog';
 
 @NgModule({
   declarations: [],
@@ -34,6 +38,7 @@ import { NgxSpinnerModule } from 'ngx-spinner';
     MatSnackBarModule,
     MatProgressSpinnerModule,
     MatToolbarModule,
+    MatDialogModule,
     MatIconModule,
     HttpClientModule,
     MatTableModule,
@@ -57,6 +62,7 @@ import { NgxSpinnerModule } from 'ngx-spinner';
     MatProgressSpinnerModule,
     MatToolbarModule,
     MatIconModule,
+    MatDialogModule,
     HttpClientModule,
     MatTableModule,
     MatTooltipModule,
